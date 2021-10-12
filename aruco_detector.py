@@ -11,7 +11,7 @@ while(True):
     # Our operations on the frame come here
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
     aruco_dict = aruco.Dictionary_get(aruco.DICT_6X6_250)
-    parameters =  aruco.DetectorParameters_create()
+    parameters = aruco.DetectorParameters_create()
 
     #lists of ids and the corners beloning to each id
     corners, ids, rejectedImgPoints = aruco.detectMarkers(gray, aruco_dict, parameters=parameters)
@@ -21,7 +21,7 @@ while(True):
 
     #print(rejectedImgPoints)
     # Display the resulting frame
-    cv2.imshow('frame',gray)
+    cv2.imshow('frame', gray)
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
 
