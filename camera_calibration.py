@@ -45,13 +45,13 @@ while True:
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
 
-#TODO : Check we have enough board pattern detection (like at least 50) before continue
-
+    #TODO : Check we have enough board pattern detection (like at least 50) before continue
+    #Continue == stopping the loop
 
 # Calibrate the camera and save the results
 ret, mtx, dist, rvecs, tvecs = cv2.calibrateCamera(objectPointsArray, imgPointsArray, gray.shape[::-1], None, None)
 
-#TODO : Save the result somewhere
+#TODO : Print the result and write it down on a paper
 
 # Print the camera calibration error
 error = 0
