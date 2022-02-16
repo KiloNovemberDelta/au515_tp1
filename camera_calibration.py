@@ -5,13 +5,14 @@ import glob
 # Define the chess board rows and columns
 rows = 3 #TODO : Select the right number of rows
 cols = 3 #TODO : Select the right number of colums
+square_size = 30 #TODO : Set the square size in mm
 
 # Set the termination criteria for the corner sub-pixel algorithm
 criteria = (cv2.TERM_CRITERIA_MAX_ITER + cv2.TERM_CRITERIA_EPS, 30, 0.001)
 
 # Prepare the object points: (0,0,0), (1,0,0), (2,0,0), ..., (6,5,0). They are the same for all images
 objectPoints = np.zeros((rows * cols, 3), np.float32)
-objectPoints[:, :2] = np.mgrid[0:rows, 0:cols].T.reshape(-1, 2)
+objectPoints[:, :2] = np.mgrid[0:rows, 0:cols].T.reshape(-1, 2)*square_size
 
 # Create the arrays to store the object points and the image points
 objectPointsArray = []
